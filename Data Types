@@ -1,0 +1,5 @@
+#Declare Variables
+var num int
+var num = 1
+
+var (num1, num2)
