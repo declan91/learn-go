@@ -21,7 +21,7 @@ blank identifier, use to avoid un-used variable error:
 
 	_ := num
 
-## multi declaration
+## -- multi declaration
 same type:
 
 	var num1, num2 int
@@ -52,7 +52,7 @@ objects multi declaration:
 		}
 	)
 
-## redeclaration
+## -- redeclaration
 
 at least one of the variables is a new variable:
 
@@ -76,7 +76,7 @@ at least one of the variables is a new variable:
 
 	f = 1 -- yes, 1 is treated as number.
 
-## multi assignment
+## -- multi assignment
 
 	var (
 		num1 = 1
@@ -108,11 +108,14 @@ at least one of the variables is a new variable:
 
 a pointer stores the memory address of a value
 
-## The & Operator
+an explanation of & and \* from stack overflow:
+https://stackoverflow.com/questions/38172661/what-is-the-meaning-of-and-in-golang
+
+## -- the & Operator
 
 & goes in front of a variable when you want to get that variable's memory address.
 	
-## The * Operator
+## -- the * Operator
 
 \* goes in front of a variable that holds a memory address and resolves it (it is therefore the counterpart to the & operator). It goes and gets the thing that the pointer was pointing at, e.g. \*myString.
 
@@ -124,4 +127,10 @@ or more usefully, something like
 	myStructPointer = &myStruct
 	// ...
 	(*myStructPointer).someAttribute = "New Value"
+	
+## -- \* in front of a Type
+
+When \* is put in front of a type, e.g. \*string, it becomes part of the type declaration, so you can say "this variable holds a pointer to a string".
+
+So the confusing thing is that the * really gets used for 2 separate (albeit related) things. The star can be an operator or part of a type.
 	
