@@ -1,4 +1,4 @@
-##Default Value(Zero value)
+# Default Value(Zero value)
 
   int 0
   string ""
@@ -7,15 +7,19 @@
   pointer nil
   time.Time 0001-01-01 00:00:00 +0000 UTC
 
-#Variables Declaration
+# Variables Declaration
+
   var num int -- declaration, use this when the initial value is unknown at the time of declaration.
+  
   num := 1 -- short declaration, use this when the value is known, can not be used in package scoped variable declaration. 
            -- equvilent to "var num int = 1"
 
   _ = num -- blank identifier, use to avoid un-used variable error
 
--- multi declaration
+## multi declaration
+
   var num1, num2 int -- same type
+  
   num1, num2 := 1, 2 -- same type multi short declaration
 
   var (
@@ -36,12 +40,12 @@
     }
   ) -- objects
 
--- redeclaration
+## redeclaration
 
   var num1 int
   num1, num2 = 1, 2 -- at least one of the variables is a new variable
 
-#Variable Assignment -- https://play.golang.org/p/iH6sOTkVcyB
+# Variable Assignment -- https://play.golang.org/p/iH6sOTkVcyB
 
   Can only assign a value with a type to a variable with the same type.
   var num1 int
@@ -54,7 +58,7 @@
 
   f = 1 -- yes, 1 is treated as number.
 
--- multi assignment
+## multi assignment
 
   var (
     num1 = 1
@@ -63,7 +67,7 @@
 
   num1, num2 = 1, 2
 
-#Type converstion -- https://play.golang.org/p/J4JknEmqbcf
+# Type converstion -- https://play.golang.org/p/J4JknEmqbcf
 	var num1 int
 	var num2 float64
 
