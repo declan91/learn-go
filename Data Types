@@ -73,7 +73,7 @@
 #Type converstion -- https://play.golang.org/p/I4qEx9GN3k8
 	var num1 int
 	var num2 float64
-	
+
 	num1 = 1
 	num2 = float64(num1)
 
