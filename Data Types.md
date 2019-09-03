@@ -6,7 +6,8 @@
 	float64 0
 	pointer nil
 	time.Time 0001-01-01 00:00:00 +0000 UTC
-
+	byte 0 (uint8)
+	
 # Variables Declaration
 
 declaration, use this when the initial value is unknown at the time of declaration:
@@ -108,19 +109,35 @@ at least one of the variables is a new variable:
 
 a pointer stores the memory address of a value
 
+	var counter byte = 100
+	p := &counter
+	v := *p
+	
+
+\* p can indirectly reterive and update the value of the counter
+
+	counter++
+	fmt.Println(*p) // prints 101
+	
+	*p = 25
+	fmt.Println(counter) // prints 25
+	
+
+
 an explanation of & and \* from stack overflow:
+
 https://stackoverflow.com/questions/38172661/what-is-the-meaning-of-and-in-golang
 
-## -- the & Operator
+## -- the & Operator (address-of operator)
 
 & goes in front of a variable when you want to get that variable's memory address.
 	
-## -- the * Operator
+## -- the * Operator (indirection operator)
 
 \* goes in front of a variable that holds a memory address and resolves it (it is therefore the counterpart to the & operator). It goes and gets the thing that the pointer was pointing at, e.g. \*myString.
 
 	myString := "Hi"
-	fmt.Println(*&myString)
+	fmt.Println(*&myString) //prints "Hi"
 	
 or more usefully, something like
 
@@ -133,4 +150,8 @@ or more usefully, something like
 When \* is put in front of a type, e.g. \*string, it becomes part of the type declaration, so you can say "this variable holds a pointer to a string".
 
 So the confusing thing is that the * really gets used for 2 separate (albeit related) things. The star can be an operator or part of a type.
-	
+
+
+
+
+
