@@ -155,6 +155,13 @@ One thing to note:
 ## a bit more on make() and new()
 
 	https://stackoverflow.com/questions/9320862/why-would-i-make-or-new
+	
+	make function allocates and initializes an object of type slice, map, or chan only. Like new, the first argument is a type. But, it can also take a second argument, the size. Unlike new, make’s return type is the same as the type of its argument, not a pointer to it. And the allocated value is initialized (not set to zero value like in new). The reason is that slice, map and chan are data structures. They need to be initialized, otherwise they won't be usable. This is the reason new() and make() need to be different.
+
+The following examples from Effective Go make it very clear:
+
+	p *[]int = new([]int) // *p = nil, which makes p useless
+	v []int = make([]int, 100) // creates v structure that has pointer to an array, length field, and capacity field. So, v is immediately usable
 
 
 # -------------------------------------------------------------------
