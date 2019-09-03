@@ -19,7 +19,7 @@ short declaration, use this when the value is known, can not be used in package 
 
 blank identifier, use to avoid un-used variable error:
 
-	_ = num
+	_ := num
 
 ## multi declaration
 same type:
@@ -57,7 +57,7 @@ objects multi declaration:
 at least one of the variables is a new variable:
 
 	var num1 int
-	num1, num2 = 1, 2
+	num1, num2 := 1, 2
 
 # Variable Assignment
 
