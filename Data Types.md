@@ -127,7 +127,7 @@ a pointer stores the memory address of a value, https://play.golang.org/p/lUdlZs
 	fmt.Printf("type of v: %T, address of v: %v, value of v: %d\n", v, &v, v)
 
 
-## -- decalartion
+## -- declaration
 
 example: https://play.golang.org/p/toDeNO3-zp4
 
@@ -147,17 +147,21 @@ example: https://play.golang.org/p/toDeNO3-zp4
 	    fmt.Println(reflect.TypeOf(v))
 	    fmt.Println(reflect.TypeOf(x))
 	}
+	
 One thing to note:
 
 	new() is the only way to get a pointer to an unnamed integer or other basic type. You can write "p := new(int)" but you can't write "p := &int{0}". Other than that, it's a matter of preference.
 
+## ---------------------------------------------------------------------------------
 
 a bit more on make() and new()
 
 	https://stackoverflow.com/questions/9320862/why-would-i-make-or-new
 
 
-an explanation of & and \* from stack overflow:
+# ----------------------------------------------------------------------------------
+
+# An explanation of & and \* from stack overflow:
 
 https://stackoverflow.com/questions/38172661/what-is-the-meaning-of-and-in-golang
 
