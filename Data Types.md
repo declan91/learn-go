@@ -1,11 +1,17 @@
 # Default Value(Zero value)
 
   int 0
+  
   string ""
+  
   bool false
+  
   float64 0
+  
   pointer nil
+  
   time.Time 0001-01-01 00:00:00 +0000 UTC
+  
 
 # Variables Declaration
 
@@ -18,27 +24,35 @@
 
 ## multi declaration
 
-  var num1, num2 int -- same type
+	{ var num1, num2 int -- same type }
   
-  num1, num2 := 1, 2 -- same type multi short declaration
+	{	num1, num2 := 1, 2 -- same type multi short declaration }
 
-  var (
-    num1 int, 
-    num2 int, 
-    s string
-  ) -- different type but the same group for readibility
+{
 
-  type (
-    object1 struct {
-      field1 string
-      field2 string
-    }
+	var (
+		num1 int, 
+		num2 int, 
+		s string
+	) -- different type but the same group for readibility
 
-    object2 struct {
-      field1 string
-      field2 string
-    }
-  ) -- objects
+}
+
+{
+
+	  type (
+	    object1 struct {
+	      field1 string
+	      field2 string
+	    }
+			
+	    object2 struct {
+	      field1 string
+	      field2 string
+	    }
+	  ) -- objects
+		
+  }
 
 ## redeclaration
 
