@@ -152,14 +152,14 @@ One thing to note:
 
 	new() is the only way to get a pointer to an unnamed integer or other basic type. You can write "p := new(int)" but you can't write "p := &int{0}". Other than that, it's a matter of preference.
 
-## ---------------------------------------------------------------------------------
+## -------------------------------------------------------------------
 
 a bit more on make() and new()
 
 	https://stackoverflow.com/questions/9320862/why-would-i-make-or-new
 
 
-# ----------------------------------------------------------------------------------
+# -------------------------------------------------------------------
 
 # An explanation of & and \* from stack overflow:
 
