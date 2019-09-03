@@ -107,12 +107,11 @@ at least one of the variables is a new variable:
 	
 # Pointers
 
-a pointer stores the memory address of a value
+a pointer stores the memory address of a value, https://play.golang.org/p/lUdlZs0OtD-
 
-	var counter byte = 100
+	counter := 100
 	p := &counter
 	v := *p
-	
 
 \* p can indirectly reterive and update the value of the counter
 
@@ -121,7 +120,41 @@ a pointer stores the memory address of a value
 	
 	*p = 25
 	fmt.Println(counter) // prints 25
+
 	
+	fmt.Printf("type of counter: %T, address of counter: %v, value of counter: %d\n", counter, &counter, counter)
+	fmt.Printf("type of p: %T, address of p: %v, value of p: %v, *p: %d\n", p, &p, p, v)
+	fmt.Printf("type of v: %T, address of v: %v, value of v: %d\n", v, &v, v)
+
+
+## -- decalartion
+
+example: https://play.golang.org/p/toDeNO3-zp4
+
+	package main
+
+	import "fmt"
+	import "reflect"
+
+	type Vector struct {
+	    x   int
+	    y   int
+	}
+
+	func main() {
+	    v := &Vector{}
+	    x := new(Vector)
+	    fmt.Println(reflect.TypeOf(v))
+	    fmt.Println(reflect.TypeOf(x))
+	}
+One thing to note:
+
+	new() is the only way to get a pointer to an unnamed integer or other basic type. You can write "p := new(int)" but you can't write "p := &int{0}". Other than that, it's a matter of preference.
+
+
+a bit more on make() and new()
+
+	https://stackoverflow.com/questions/9320862/why-would-i-make-or-new
 
 
 an explanation of & and \* from stack overflow:
@@ -150,8 +183,3 @@ or more usefully, something like
 When \* is put in front of a type, e.g. \*string, it becomes part of the type declaration, so you can say "this variable holds a pointer to a string".
 
 So the confusing thing is that the * really gets used for 2 separate (albeit related) things. The star can be an operator or part of a type.
-
-
-
-
-
