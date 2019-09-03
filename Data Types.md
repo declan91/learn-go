@@ -114,7 +114,7 @@ a pointer stores the memory address of a value
 	
 ## The * Operator
 
- /* goes in front of a variable that holds a memory address and resolves it (it is therefore the counterpart to the & operator). It goes and gets the thing that the pointer was pointing at, e.g. *myString.
+\* goes in front of a variable that holds a memory address and resolves it (it is therefore the counterpart to the & operator). It goes and gets the thing that the pointer was pointing at, e.g. \*myString.
 
 	myString := "Hi"
 	fmt.Println(*&myString)
