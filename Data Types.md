@@ -104,3 +104,24 @@ at least one of the variables is a new variable:
 	s3 := string([]byte{104, 105}) -- yes
 	
 	
+# Pointers
+
+a pointer stores the memory address of a value
+
+## The & Operator
+
+& goes in front of a variable when you want to get that variable's memory address.
+	
+## The * Operator
+
+* goes in front of a variable that holds a memory address and resolves it (it is therefore the counterpart to the & operator). It goes and gets the thing that the pointer was pointing at, e.g. *myString.
+
+	myString := "Hi"
+	fmt.Println(*&myString)
+	
+or more usefully, something like
+
+	myStructPointer = &myStruct
+	// ...
+	(*myStructPointer).someAttribute = "New Value"
+	
