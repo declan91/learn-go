@@ -1,26 +1,25 @@
 # Default Value(Zero value)
 
-  int 0
-  
-  string ""
-  
-  bool false
-  
-  float64 0
-  
-  pointer nil
-  
-  time.Time 0001-01-01 00:00:00 +0000 UTC
-  
+	int 0
+	string ""
+	bool false
+	float64 0
+	pointer nil
+	time.Time 0001-01-01 00:00:00 +0000 UTC
 
 # Variables Declaration
 
-  var num int -- declaration, use this when the initial value is unknown at the time of declaration.
-  
-  num := 1 -- short declaration, use this when the value is known, can not be used in package scoped variable declaration. 
-           -- equvilent to "var num int = 1"
+declaration, use this when the initial value is unknown at the time of declaration:
 
-  _ = num -- blank identifier, use to avoid un-used variable error
+	var num int
+
+short declaration, use this when the value is known, can not be used in package scoped variable declaration, equvilent to "var num int = 1":
+
+	num := 1
+
+blank identifier, use to avoid un-used variable error:
+
+	_ = num
 
 ## multi declaration
 same type:
