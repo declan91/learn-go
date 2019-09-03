@@ -23,65 +23,73 @@
   _ = num -- blank identifier, use to avoid un-used variable error
 
 ## multi declaration
+same type:
 
-	{ var num1, num2 int -- same type }
+	var num1, num2 int
   
-	{	num1, num2 := 1, 2 -- same type multi short declaration }
+same type multi short declaration:
 
-{
+	num1, num2 := 1, 2 
+
+different type but the same group for readibility:
 
 	var (
 		num1 int, 
 		num2 int, 
 		s string
-	) -- different type but the same group for readibility
+	) 
 
-}
+objects multi declaration:
 
-{
+	type (
+		object1 struct {
+			field1 string
+			field2 string
+		}
 
-	  type (
-	    object1 struct {
-	      field1 string
-	      field2 string
-	    }
-			
-	    object2 struct {
-	      field1 string
-	      field2 string
-	    }
-	  ) -- objects
-		
-  }
+		object2 struct {
+			field1 string
+			field2 string
+		}
+	)
 
 ## redeclaration
 
-  var num1 int
-  num1, num2 = 1, 2 -- at least one of the variables is a new variable
+at least one of the variables is a new variable:
 
-# Variable Assignment -- https://play.golang.org/p/iH6sOTkVcyB
+	var num1 int
+	num1, num2 = 1, 2
 
-  Can only assign a value with a type to a variable with the same type.
-  var num1 int
-  num1 = "1" -- no, "1" is string, num1 is int.
-  var t bool 
-  t = 1 -- no, t is bool, 1 is int.
-  var f float64
-  f = num1 -- no, f is float64, num1 is int.
-  num1 = f -- no, f is float64, num1 is int.
+# Variable Assignment
 
-  f = 1 -- yes, 1 is treated as number.
+	https://play.golang.org/p/iH6sOTkVcyB
+	
+  Can only assign a value with a type to a variable with the same type:
+
+	var num1 int
+	num1 = "1" -- no, "1" is string, num1 is int.
+	var t bool 
+	t = 1 -- no, t is bool, 1 is int.
+
+	var f float64
+	f = num1 -- no, f is float64, num1 is int.
+	num1 = f -- no, f is float64, num1 is int.
+
+	f = 1 -- yes, 1 is treated as number.
 
 ## multi assignment
 
-  var (
-    num1 = 1
-    num2 = 2
-  )
+	var (
+		num1 = 1
+		num2 = 2
+	)
 
-  num1, num2 = 1, 2
+	num1, num2 = 1, 2
 
-# Type converstion -- https://play.golang.org/p/J4JknEmqbcf
+# Type converstion
+
+	https://play.golang.org/p/J4JknEmqbcf
+
 	var num1 int
 	var num2 float64
 
