@@ -1,0 +1,15 @@
+#Scope
+  Package Scope -- All declaration has to start with a key word, eg package, var, func
+  	all declared funcs are visible in the same package.
+		func name has to be unique within the same package.
+		*variables decalred in package scope live forever, until program exists.
+	  to make a variable or a func visible to other packages, make its first letter uppercase.
+    
+  Block Scope
+		variables declared in a func is only visible to the code inside the func.
+
+  File Scope
+		imported packages are only visible to the importing file
+		
+		-- renaming imported packages
+		import f "fmt"
