@@ -1,11 +1,3 @@
-#Scope
-  Package Scope -- All declaration has to start with a key word, eg package, var, func
-    variables decalred in package scope live forever, until program exists.
-
-  Block Scope
-
-  File Scope
-
 #Default Value(Zero value)
   int 0
   string ""
@@ -70,12 +62,19 @@
 
   num1, num2 = 1, 2
 
-#Type converstion -- https://play.golang.org/p/I4qEx9GN3k8
+#Type converstion -- https://play.golang.org/p/J4JknEmqbcf
 	var num1 int
 	var num2 float64
 
 	num1 = 1
 	num2 = float64(num1)
 
+	num3 := 1
+	s1 := "11"
+	s1converted, _ := strconv.ParseInt(s1, 10 , 32)
+	num4 := num3 + int(s1converted)
 
-
+	s2 := string(num1) -- yes, ascii
+	s3 := string([]byte{104, 105}) -- yes
+	
+	
