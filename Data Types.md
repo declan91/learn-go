@@ -152,6 +152,40 @@ One thing to note:
 
 	new() is the only way to get a pointer to an unnamed integer or other basic type. You can write "p := new(int)" but you can't write "p := &int{0}". Other than that, it's a matter of preference.
 
+
+
+## -- pointer with composite types
+
+https://play.golang.org/p/C8MjxWaDBy3
+
+when passing a variable to a func, each time the func runs, it creates a new copy of that variable.
+
+array:
+
+	arrays are bare values, when assigned or passed to functions, they get copied.
+	if necessary, the pointer to the array needs to be passed to the func with. try to use slice instead of pointers to arrays 
+
+	array elements address is continuous.
+	
+slice: 
+
+	slice header contains a pointer to its backing array, so there is no need to use a pointer to a slice to modify its elements.
+
+	however when adding new elements in a different func, inside the func it only has the copy of the slice headers, it means it will only add the new headers to the local copy instead of the orginal slice. note passing slices to a func is not very common, try not to use pointers with slices.
+	
+	slice's address is continuous in the memory.
+
+map:
+
+	map value is a pointer, there is no need to use pointers on map values. it works on both updating and adding new elements.
+	map' elements address cannot be found, as go runtime will change the map's address behind the scene.
+
+struct:
+
+	pointer to the struct needs to be passed to the func to be updated.
+	struct's each field has it's own address, they are continuous.
+
+
 ## a bit more on make() and new()
 
 	https://stackoverflow.com/questions/9320862/why-would-i-make-or-new
