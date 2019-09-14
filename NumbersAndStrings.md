@@ -27,12 +27,19 @@ the result is not just 0.1, after some decimal places, it looks weird.
     var ratio float64 = 3/2
     fmt.Println(ratio) //prints 1
 
-    //the way go does it is to convert both operands to int and then convert the result to float64.
-
+  the way go does it is to convert both operands to int and then convert the result to float64.
+  the fraction part will be removed after convertion.
+  
     ratio = float64(int(3) / int(2))
     fmt.Println(ratio) prints 1
-   
+ 
+# Precedence is as the same as math, if confused always use parentheses.
 
+    celsius := 35.
+    
+    fahrenheit := (9 * celsius) / 5 + 32
+    
+    fmt.Printf("%g C is %g F\n", celsius, fahrenheit)
 
 
 
