@@ -1,4 +1,3 @@
-
 # Setting up Dockerr on new VM
 Installing docker on the new VM
 Firstly update ubuntu
@@ -18,6 +17,26 @@ sudo systemctl enable docker
 Configure docker to run without sudo 
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+switch to root user 
+sudo su - 
+
+When docker is first installed, a user named postgres will be created. We need to setup the DB password on this user. 
+As root user run the command passwd postgres
+You will be prompted to type the new password twice. 
+
+Switch to the postgres user by typing su - postgres
+
+
+
+Installing postgres if required:
+To see if the postgres is installed correctly run the command postgres help.
+If you see a help menu it is installed. 
+
+
+
+
+
 
 
 
